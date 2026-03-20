@@ -1,37 +1,49 @@
 # SODA
 
-SODA is a lightweight Python package for single-cell batch integration based on Sinkhorn Optimal Transport with Divergence-Based Adaptation.
+SODA is a Python package for single-cell batch integration based on Sinkhorn Optimal Transport with Divergence-Based Adaptation.
 
-This repository contains a clean, package-ready implementation extracted from the paper revision codebase, with a small public API, a command-line interface, and runnable examples for `.h5ad` datasets.
+This repository provides a clean, reusable implementation of SODA intended for readers of the accompanying manuscript who want to install the method, run it on AnnData objects, and reproduce a lightweight demo without downloading large benchmark files.
 
-## Why This Repository
+## Repository Contents
 
-- Clean separation between package code and paper-specific benchmarking scripts
-- Standard `src/` layout for packaging and GitHub release
-- Minimal public API for Python and command-line use
-- Ready-to-extend examples for lightweight demos and user-provided single-cell datasets
+- `src/soda/`: package source code
+- `examples/`: minimal usage examples and a lightweight demo workflow
+- `docs/`: short maintenance notes for the repository
+
+The repository is intentionally focused on the reusable method implementation and example workflows. Large manuscript-specific datasets and benchmark outputs are not bundled here.
 
 ## Installation
 
 Clone the repository and install it in editable mode:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/weiquanpan/SODA.git
 cd SODA
 pip install -e .
 ```
 
-For development tools:
+Optional development tools:
 
 ```bash
 pip install -e .[dev]
 ```
 
-## Quick Start
+## Expected Input
 
-### Command line
+SODA works with AnnData objects stored in `.h5ad` format.
 
-Run SODA on any `.h5ad` file:
+Typical input requirements are:
+
+- a batch column in `adata.obs`, usually `batch`
+- a low-dimensional representation in `adata.obsm`, usually `X_pca`
+
+If `X_pca` is not present, the package can compute PCA automatically.
+
+## Command-Line Usage
+
+The package installs a command-line entry point called `soda-run`.
+
+Minimal example:
 
 ```bash
 soda-run --input path/to/data.h5ad --batch-key batch
@@ -43,7 +55,16 @@ This writes a corrected file next to the input by default:
 path/to/data_soda.h5ad
 ```
 
-### Python API
+Common options:
+
+- `--input`: input `.h5ad` file
+- `--output`: output `.h5ad` file
+- `--batch-key`: batch label column in `adata.obs`
+- `--use-rep`: embedding key in `adata.obsm`
+- `--tau`, `--alpha`, `--epsilon`: SODA hyperparameters
+- `--no-neighbors`, `--no-leiden`, `--no-umap`: disable downstream Scanpy steps
+
+## Python Usage
 
 ```python
 import scanpy as sc
@@ -72,43 +93,71 @@ adata_soda = integrate_adata(
 adata_soda.write_h5ad("path/to/data_soda.h5ad")
 ```
 
-## Input Expectations
+## Output
 
-SODA expects:
+By default, the package stores the corrected representation in:
 
-- an AnnData object stored in `.h5ad` format
-- a batch label column in `adata.obs`, typically `batch`
-- a low-dimensional representation in `adata.obsm`, typically `X_pca`
+- `adata.obsm["X_soda"]`
 
-If `X_pca` is missing, the package will compute PCA automatically.
+It also records run metadata in:
 
-## GitHub-Friendly Demo
+- `adata.uns["soda"]["X_soda"]`
 
-A lightweight reproducible demo is included in [examples/README.md](/e:/E/W-test/compare/SODA/examples/README.md).
+If neighbor graph construction, Leiden clustering, and UMAP are enabled, the output AnnData object also contains the corresponding derived results.
 
-The recommended demo workflow is:
+## Lightweight Demo
 
-- [prepare_demo_data.R](/e:/E/W-test/compare/SODA/examples/prepare_demo_data.R)
-- [run_real_data_demo.py](/e:/E/W-test/compare/SODA/examples/run_real_data_demo.py)
+To keep the repository small, the demo does not ship large binary datasets.
 
-It is designed for GitHub use, so the repository does not need to ship large binary datasets. The `R` helper script creates a small `.h5ad` demo dataset from package-provided single-cell data, and the Python demo then runs SODA on that generated file.
+Instead, a lightweight reproducible example is provided in [`examples/`](examples/):
 
-For example:
+1. Generate a compact demo `.h5ad` file from package-provided single-cell data:
 
 ```bash
 Rscript examples/prepare_demo_data.R
+```
+
+2. Run SODA on the generated file:
+
+```bash
 python examples/run_real_data_demo.py --input outputs/demo_data/pbmc_small_demo.h5ad --batch-key batch --celltype-key cell_type
 ```
 
-The repository also includes generic workflows for user-provided real `.h5ad` data. Together, these examples show how to:
+This workflow produces:
 
-- prepare or read an `.h5ad` dataset
-- run SODA integration
-- save the corrected AnnData object
-- export UMAP figures before and after correction
-- optionally compare batch and cell-type views
+- a demo input dataset
+- a corrected `.h5ad` file
+- a short summary text file
+- UMAP figures colored by batch
+- optional UMAP figures colored by cell type
 
-## Repository Layout
+The demo preparation step uses package-provided data from `SeuratObject::pbmc_small`, so it is suitable for a GitHub repository where large files should be avoided.
+
+## Using Your Own Data
+
+If you already have a real `.h5ad` dataset, you can skip the `R` demo-preparation step and run either:
+
+```bash
+soda-run --input your_data.h5ad --batch-key batch
+```
+
+or:
+
+```bash
+python examples/run_real_data_demo.py --input your_data.h5ad --batch-key batch
+```
+
+Additional example notes are available in [`examples/README.md`](examples/README.md).
+
+## Package API
+
+The main public objects are:
+
+- `soda.SODA`
+- `soda.SODAResult`
+- `soda.integrate_adata`
+
+## Repository Structure
 
 ```text
 SODA/
@@ -132,42 +181,10 @@ SODA/
         `-- scanpy.py
 ```
 
-## Public API
+## Relation to the Manuscript
 
-The main public objects are:
-
-- `soda.SODA`
-- `soda.SODAResult`
-- `soda.integrate_adata`
-
-## Development
-
-Basic local checks:
-
-```bash
-python -m compileall src examples
-```
-
-If you add tests later:
-
-```bash
-pytest
-```
-
-## Notes Before Public GitHub Release
-
-This repository is now structurally ready for GitHub, but before public release you should still decide:
-
-- the final repository name
-- license choice
-- author metadata
-- project URL fields in `pyproject.toml`
-- whether to add a `CITATION.cff` file
-
-A short checklist is included in [docs/GITHUB_RELEASE_CHECKLIST.md](/e:/E/W-test/compare/SODA/docs/GITHUB_RELEASE_CHECKLIST.md).
-
-The repository intentionally avoids committing large example datasets; instead, the demo data can be generated locally from the included example workflow.
+This repository contains the reusable SODA implementation and example workflows intended for software use and method illustration. It does not attempt to mirror the full manuscript revision workspace, benchmarking outputs, or all paper-specific analysis files.
 
 ## Citation
 
-If you use SODA in this repository, please cite the accompanying manuscript once the final bibliographic information is fixed.
+If you use SODA in your work, please cite the accompanying manuscript once the final bibliographic information is available.
