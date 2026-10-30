@@ -4,24 +4,12 @@
     "sha256": "ab5420a2ec08448e0c04e04e13e4055bff4ab710c0ce33545957da6b7b0a0138"
   },
   {
-    "path": "export_real_pbmcsca_subset_h5ad.R",
-    "sha256": "ab5420a2ec08448e0c04e04e13e4055bff4ab710c0ce33545957da6b7b0a0138"
-  },
-  {
     "path": "generate_rebuttal_tables.py",
     "sha256": "f85afcafbfdeb8cbb44b5b3bbdf44c3e66c21529c572c34537908b09848961a8"
   },
   {
     "path": "plot_pbmcsca_full_multimethod_compare.R",
     "sha256": "56ad2919e9eaaeb829143e3eb60fc90957af284b7c898731cfe10fbfd75aa6c4"
-  },
-  {
-    "path": "plot_pbmcsca_full_multimethod_compare.R",
-    "sha256": "56ad2919e9eaaeb829143e3eb60fc90957af284b7c898731cfe10fbfd75aa6c4"
-  },
-  {
-    "path": "plot_pbmcsca_full_uncorrected_compare.R",
-    "sha256": "3e6e4b060091c7f9f020e0f916f8e05860282e41c944f129fce29012beb26d7b"
   },
   {
     "path": "plot_pbmcsca_full_uncorrected_compare.R",
@@ -74,10 +62,6 @@
   {
     "path": "simulate_cellanova_data.py",
     "sha256": "4c3428fef861131a8fc465b53e513a02cae6149a79ecda3a3cbc9c165a8d23e3"
-  },
-  {
-    "path": "simulate_sc3desigin_data.r",
-    "sha256": "6dd68a5b0543baa32a542f13cf8434ee6cc70698d90aee376af316bcfff60e09"
   },
   {
     "path": "simulate_sc3desigin_data.r",
