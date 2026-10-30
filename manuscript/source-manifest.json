@@ -1,0 +1,182 @@
+[
+  {
+    "path": "export_real_pbmcsca_subset_h5ad.R",
+    "sha256": "ab5420a2ec08448e0c04e04e13e4055bff4ab710c0ce33545957da6b7b0a0138"
+  },
+  {
+    "path": "export_real_pbmcsca_subset_h5ad.R",
+    "sha256": "ab5420a2ec08448e0c04e04e13e4055bff4ab710c0ce33545957da6b7b0a0138"
+  },
+  {
+    "path": "generate_rebuttal_tables.py",
+    "sha256": "f85afcafbfdeb8cbb44b5b3bbdf44c3e66c21529c572c34537908b09848961a8"
+  },
+  {
+    "path": "plot_pbmcsca_full_multimethod_compare.R",
+    "sha256": "56ad2919e9eaaeb829143e3eb60fc90957af284b7c898731cfe10fbfd75aa6c4"
+  },
+  {
+    "path": "plot_pbmcsca_full_multimethod_compare.R",
+    "sha256": "56ad2919e9eaaeb829143e3eb60fc90957af284b7c898731cfe10fbfd75aa6c4"
+  },
+  {
+    "path": "plot_pbmcsca_full_uncorrected_compare.R",
+    "sha256": "3e6e4b060091c7f9f020e0f916f8e05860282e41c944f129fce29012beb26d7b"
+  },
+  {
+    "path": "plot_pbmcsca_full_uncorrected_compare.R",
+    "sha256": "3e6e4b060091c7f9f020e0f916f8e05860282e41c944f129fce29012beb26d7b"
+  },
+  {
+    "path": "run_batch.py",
+    "sha256": "9ddb723d754bdf4a51ca6ee32574f73188d25722087a00227c0e557558916016"
+  },
+  {
+    "path": "run_benchmark.py",
+    "sha256": "a03da71ee67d570f67aebb851f6fc8627f453247b93836613da80b7242863230"
+  },
+  {
+    "path": "run_figure1_preview.py",
+    "sha256": "6f142a89cdd7fde364b91b5d11c2e1c1c96f21a8adfb7ca2bc2cba97cba47f11"
+  },
+  {
+    "path": "run_original_metrics_on_scdesign3.py",
+    "sha256": "0bb1ceffdfb1b457174a4176a1ef6c535d08e628e90911f599202e4df39b226a"
+  },
+  {
+    "path": "run_reviewer_all_sensitivity.py",
+    "sha256": "c0517c1dc837f023eb624102be6249b51e9de67997107db8ab04ce500ba625d1"
+  },
+  {
+    "path": "run_reviewer_figure1_funn_pbmcsca.py",
+    "sha256": "8ea26bc993f1bcf466dda930d8b3fb520a2ebed9f009373b59b481fb379f47bc"
+  },
+  {
+    "path": "run_reviewer_figure1_pbmc4k_quick.py",
+    "sha256": "4c03d66a0edf6fb8da26d656c69e67a72ce69eb87237d6c640973a74ebc9d1ca"
+  },
+  {
+    "path": "run_reviewer_figure1_pbmcsca.py",
+    "sha256": "270be5bab7b4903d4a3bdfbf70940ace3fc549dcf40ededdfd82f6e697135540"
+  },
+  {
+    "path": "run_scaling_profile.py",
+    "sha256": "35987034fc3fe8f69719c3757087f9d03771dbb22414407fabc1a26d4b7c93c4"
+  },
+  {
+    "path": "run_seurat_comparison.py",
+    "sha256": "01918badedbb6a03d393ace789443989347bc580dff24eb7d12164bffce6b9c6"
+  },
+  {
+    "path": "run_three_datasets.py",
+    "sha256": "dd3d8d1dd0f041858c472e45bd4e5396a0612bdef67d5184a1ebebdc09bd785c"
+  },
+  {
+    "path": "simulate_cellanova_data.py",
+    "sha256": "4c3428fef861131a8fc465b53e513a02cae6149a79ecda3a3cbc9c165a8d23e3"
+  },
+  {
+    "path": "simulate_sc3desigin_data.r",
+    "sha256": "6dd68a5b0543baa32a542f13cf8434ee6cc70698d90aee376af316bcfff60e09"
+  },
+  {
+    "path": "simulate_sc3desigin_data.r",
+    "sha256": "6dd68a5b0543baa32a542f13cf8434ee6cc70698d90aee376af316bcfff60e09"
+  },
+  {
+    "path": "soda_benchmark/__init__.py",
+    "sha256": "d28ddc800a6ccb27f67a545f44799ea486e89f7935a13d0c157d0abc4d55e569"
+  },
+  {
+    "path": "soda_benchmark/core/__init__.py",
+    "sha256": "02d680e4574c76eace9b3bf70f63891d9c248de051d030c1e1f877ec216c51c2"
+  },
+  {
+    "path": "soda_benchmark/core/benchmark.py",
+    "sha256": "e5f43e6bffdf2f0416532dbcf6c2e70373155800a669bd89070d6a400428299a"
+  },
+  {
+    "path": "soda_benchmark/core/report.py",
+    "sha256": "8f6c644800c7b975d453c14d5893feb525bcbda8392f5fc030166f044ccbda6b"
+  },
+  {
+    "path": "soda_benchmark/methods/__init__.py",
+    "sha256": "abcb78fd791db989385e173e2329490e9cc8d83ff079ec047db1bae15e573fce"
+  },
+  {
+    "path": "soda_benchmark/methods/base.py",
+    "sha256": "5534c4023ccb5b5c1d7c01e195a05bec8dca9836e7f0d98fe308c42f8e66c439"
+  },
+  {
+    "path": "soda_benchmark/methods/bbknn.py",
+    "sha256": "a29685876fef7fbef3068588baea2cc72d8216368e72846f1132926521438bbd"
+  },
+  {
+    "path": "soda_benchmark/methods/cellanova_method.py",
+    "sha256": "9b132587d30ad4fda063260a52cf2bcac9c2773629647cc29072fb857d2fb00d"
+  },
+  {
+    "path": "soda_benchmark/methods/combat.py",
+    "sha256": "d211816ed3da96b230d479e84312fabfff522b69d2e30a459806dc582d9bbd69"
+  },
+  {
+    "path": "soda_benchmark/methods/harmony.py",
+    "sha256": "f29d2d00601b94fd3088b4091213f6e3c9e0f0bbad568f031a455907f90b2cd9"
+  },
+  {
+    "path": "soda_benchmark/methods/liger_method.py",
+    "sha256": "b35da0b8d4cca00dc95b591c1b0b39207b50e9a62af059ffc9866b316c6c502a"
+  },
+  {
+    "path": "soda_benchmark/methods/scvi_method.py",
+    "sha256": "092aa9af90b375d2b71510cf5a72dc42f0baf54dbe3fefe1ccb478e2f039ec7a"
+  },
+  {
+    "path": "soda_benchmark/methods/seurat_integration.py",
+    "sha256": "570d2af9387f46428df56ddc7779d943336fffbff6a3c2edf605de8f2fe6c7dc"
+  },
+  {
+    "path": "soda_benchmark/methods/smai_method.py",
+    "sha256": "9d1fb1311ab4a8d0c4a339777ea15cf80ba33c21d4402486088cfef9c59c1f90"
+  },
+  {
+    "path": "soda_benchmark/methods/soda.py",
+    "sha256": "2bcc259962513998c8ebe297ae1192496bf40c11a96e59d87e509061f6686428"
+  },
+  {
+    "path": "soda_benchmark/metrics/__init__.py",
+    "sha256": "c7fd9a3178f86a1329d23ca2088baf0e1ce9926538bd81ad7f6b624629fb1573"
+  },
+  {
+    "path": "soda_benchmark/metrics/ari.py",
+    "sha256": "d7b466282a64e08a147d230052504d6b9598aa6bbad56051caeb7e8ad1299f4d"
+  },
+  {
+    "path": "soda_benchmark/metrics/base.py",
+    "sha256": "07e763d25c045f7db79aed6ef8189cc3cf729b54f8bc2b23e8e4601a9ed7cd0b"
+  },
+  {
+    "path": "soda_benchmark/metrics/concordance.py",
+    "sha256": "7f99963f17b5c27b8ba825894076505cfd019d8b7237833073d5fd7c62870b31"
+  },
+  {
+    "path": "soda_benchmark/metrics/lisi_asw.py",
+    "sha256": "147e3633aba5ba52e3f6c74b4f33565111b28387dfdd93da444bc832cef5e4bc"
+  },
+  {
+    "path": "soda_benchmark/metrics/neighborhood.py",
+    "sha256": "f198e0f07a092f1a4330c2a02045685c226e37ede3d5c7c501651ff411fb74e1"
+  },
+  {
+    "path": "soda_benchmark/plotting/__init__.py",
+    "sha256": "41bd49fd1177427e05abff8484de8ba3d648340037b099882596e36174d7bafa"
+  },
+  {
+    "path": "soda_benchmark/plotting/plots.py",
+    "sha256": "50101cebadcb839aab50c13c5c5c51de8aa3c28d1c148381d7eb398c244f54a8"
+  },
+  {
+    "path": "sweep_scdesign3_complexity.py",
+    "sha256": "f0e2aac9156c7fb570c97968327cf5bd4d28675bdfc75cffc1e0b8e2c0687a50"
+  }
+]

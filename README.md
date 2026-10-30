@@ -10,7 +10,7 @@ This repository provides a clean, reusable implementation of SODA intended for r
 - `examples/`: minimal usage examples and a lightweight demo workflow
 - `docs/`: short maintenance notes for the repository
 
-The repository is intentionally focused on the reusable method implementation and example workflows. Large manuscript-specific datasets and benchmark outputs are not bundled here.
+The repository is intentionally focused on the reusable method implementation and example workflows. Manuscript benchmark and analysis source scripts are provided in [`manuscript/`](manuscript/README.md). Large manuscript-specific datasets and benchmark outputs are not bundled here.
 
 ## Installation
 
@@ -183,7 +183,7 @@ SODA/
 
 ## Relation to the Manuscript
 
-This repository contains the reusable SODA implementation and example workflows intended for software use and method illustration. It does not attempt to mirror the full manuscript revision workspace, benchmarking outputs, or all paper-specific analysis files.
+This repository contains the reusable SODA implementation and example workflows intended for software use and method illustration. Author-supplied benchmark and analysis source scripts are now included in `manuscript/`. The repository does not mirror the full local revision workspace and does not yet include the processed datasets or benchmark outputs. See `manuscript/README.md` for scope and validation limits.
 
 ## Citation
 
